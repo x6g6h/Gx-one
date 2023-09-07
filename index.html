@@ -1,35 +1,155 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>顾笑菡</title>
+    <title>flex布局</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background-color: #eee;
+      }
+      .ying {
+        box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+      }
+      .flex {
+        display: flex;
+      }
+      .baiSe {
+        background-color: white;
+      }
+      .flex1 {
+        flex: 1;
+      }
+      .column {
+        flex-direction: column;
+      }
+      .mg8 {
+        margin: 8px;
+      }
+      .mgr8 {
+        margin-right: 8px;
+      }
+      .mgt8 {
+        margin-top: 8px;
+      }
+      .dao {
+        padding: 10px 20px;
+        border-bottom: 1px solid rgb(153, 141, 141);
+        font-size: 14px;
+        color: rgb(151, 220, 234);
+      }
+      @media (max-width: 600px) {
+        .ceBian {
+          display: none;
+        }
+        .neirong {
+          flex-direction: column;
+        }
+        .shuju {
+          flex-direction: column;
+        }
+        .youqu {
+          margin-left: 8px;
+        }
+        .shujuk {
+          margin: 0 0 8px;
+          flex: auto;
+        }
+      }
+    </style>
   </head>
-
-  <body
-    style="
-      column-count: 2;
-      border: 3px solid red;
-      margin: 10px;
-      padding: 200px;
-      height: 350px;
-      background-color: antiquewhite;
-    "
-  >
-    <div style="width: 300px; padding: 50px; background-color: chocolate">
-      <img src="D:\klmn\true.jpg" alt="头像" width="200px" height="200" />
+  <body class="flex">
+    <!--侧边栏-->
+    <div style="width: 200px; z-index: 2" class="baiSe ying">
+      <!--头像框-->
+      <div
+        style="
+          padding: 10px;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 1px solid #999;
+        "
+        class="flex"
+      >
+        <img
+          src="https://bpic.588ku.com/element_pic/20/06/30/4b7924da0039b51447b84904df81b5e4.jpg!/fw/253/quality/90/unsharp/true/compress/true
+        "
+          width="60px"
+          height="60px"
+          alt=""
+        />
+        <div style="margin-left: 10px">顾笑菡</div>
+      </div>
+      <!--导航栏-->
+      <div class="flex1">
+        <div class="dao">导航</div>
+        <div class="dao">导航</div>
+        <div class="dao">导航</div>
+        <div class="dao">导航</div>
+        <div class="dao">导航</div>
+        <div class="dao">导航</div>
+        <div class="dao">导航</div>
+        <div class="dao">导航</div>
+        <div class="dao">导航</div>
+      </div>
     </div>
-    <div style="width: 800px">
-      <p style="color: chocolate; font-size: 30px; height: 20px">你好</p>
-      <p style="font-size: 20px"><b>我是顾笑菡</b></p>
-    </div>
-    <div>
-      <p style="font-size: 30px"><b>Nice to meet you!</b></p>
-      <p>这里是我的网页（测试版）</p>
-    </div>
-    <div>
-      <p>我的资料</p>
-      <a href="D:\klmn\xiaoxue.html">点击进入</a>
+    <!--主区域-->
+    <div class="flex1 flex column">
+      <!--头部栏-->
+      <div style="height: 60px; z-index: 1" class="baiSe ying"></div>
+      <!--内容区-->
+      <div style="overflow: auto" class="neirong flex1 flex">
+        <!--左区-->
+        <div style="flex: 3" class="flex column mg8">
+          <!--数据区-->
+          <div class="flex shuju">
+            <!--数据块-->
+            <div
+              style="height: 100px"
+              class="flex1 baiSe mg8 ying shujuk"
+            ></div>
+            <div
+              style="height: 100px"
+              class="flex1 baiSe mg8 ying shujuk"
+            ></div>
+            <div
+              style="height: 100px"
+              class="flex1 baiSe mg8 ying shujuk"
+            ></div>
+            <div
+              style="height: 100px"
+              class="flex1 baiSe mg8 ying shujuk"
+            ></div>
+          </div>
+          <!--列表区-->
+          <div class="flex column">
+            <!--列表项-->
+            <div style="height: 160px" class="baiSe mg8 ying"></div>
+            <div style="height: 160px" class="baiSe mg8 ying"></div>
+            <div style="height: 160px" class="baiSe mg8 ying"></div>
+            <div style="height: 160px" class="baiSe mg8 ying"></div>
+            <div style="height: 160px" class="baiSe mg8 ying"></div>
+            <div style="height: 160px" class="baiSe mg8 ying"></div>
+          </div>
+        </div>
+        <!--右区-->
+        <div style="flex: 1" class="flex column mg8 youqu">
+          <!--提示区-->
+          <div style="height: 150px" class="baiSe ying"></div>
+          <div style="height: 150px" class="baiSe ying"></div>
+          <div style="height: 150px" class="baiSe ying"></div>
+          <!--消息区-->
+          <div style="height: 300px" class="baiSe mg8 ying"></div>
+          <div style="height: 300px" class="baiSe mg8 ying"></div>
+          <div style="height: 300px" class="baiSe mg8 ying"></div>
+          <div style="height: 300px" class="baiSe mg8 ying"></div>
+          <div style="height: 300px" class="baiSe mg8 ying"></div>
+          <!--备用-->
+          <div style="height: 600px; flex1" class="baiSe mg8 ying"></div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
